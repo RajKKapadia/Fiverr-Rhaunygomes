@@ -31,7 +31,6 @@ const detectIntent = async (queryText, sessionId) => {
     try {
         const responses = await sessionClient.detectIntent(request);
         const result = responses[0].queryResult;
-        console.log(JSON.stringify(result, 2, ' '));
         return {
             status: 1,
             text: result.fulfillmentMessages[0].text.text[0],
